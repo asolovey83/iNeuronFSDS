@@ -18,9 +18,6 @@ try:
 except Exception as e:
     print(e)
 
-
-
-
 data = [
     {
         "item": "canvas",
@@ -89,9 +86,29 @@ collection = database['table']
 
 #collection.insert_many(data)
 
-record = collection.find()
+#record = collection.find()
+#record1 = collection.find({"status":"A"})
+#record2 = collection.find({"status":{'$in':['A', 'C']}})
+#record3 = collection.find({"status":{'$gt':'A'}})
+#record4 = collection.find({"qty":{'$gte':30}})
+#record5 = collection.find({"item": "paintbrush", "qty":{'$gte':30}})
+#record6 = collection.find({"$or":[{"item": "paintbrush"}, {"qty":{'$gte':30}}]})
+#record7 = collection.find({"$or":[{"item": "paintbrush"}, {"qty":{'$gte':30}}]})
 
-for i in record:
-    print(i)
+'''for i in record7:
+    print(i)'''
+
+#collection.update_one({"item": "paintbrush"}, {"$set":{"item": "motorcycle"}})
+
+#data = collection.find()
+
+'''for i in data:
+    print(i)'''
+
+#collection.delete_one({"item": "motorcycle"})
+
+data = collection.find_one({"item": "motorcycle"})
+
+print(data)
 
 # 2:00
